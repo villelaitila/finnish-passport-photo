@@ -50,7 +50,14 @@ if not os.environ.get("PASSPORT_DEBUG"):
     _devnull = os.open(os.devnull, os.O_WRONLY)
     os.dup2(_devnull, 2)
 
-import mediapipe as mp
+try:
+    import mediapipe as mp
+except ImportError as e:  # typically a Linux server/container without OpenGL libraries
+    print(f"ERROR: cannot load MediaPipe ({e}).", file=sys.stderr)
+    if "libGL" in str(e) or "libgthread" in str(e):
+        print("On Debian/Ubuntu install the missing system libraries: "
+              "sudo apt install libgl1 libglib2.0-0", file=sys.stderr)
+    sys.exit(2)
 import numpy as np
 from PIL import Image, ImageCms, ImageDraw, ImageFont, ImageOps
 

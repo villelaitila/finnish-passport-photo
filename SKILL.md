@@ -25,6 +25,12 @@ to explain a rule or judge an unusual case (glasses, headwear, babies, medical e
   manual `pip install` is needed.
 - Internet access on the first run. The ~4 MB MediaPipe face-landmark model downloads to
   `~/.cache/finnish-passport-photo/`.
+- A 64-bit Intel/AMD or Apple Silicon computer: macOS 11+, Windows 10/11 x64, or Linux
+  x86_64 with glibc ≥ 2.28. **ARM Linux and ARM Windows are not supported**, because
+  MediaPipe has no build for them. On Linux, the system libraries `libgl1` and
+  `libglib2.0-0` are also needed. About 1 GB of disk space is used for packages. See the
+  README for the full table and per-OS install steps. If the person's setup fails, the
+  README's troubleshooting table covers the common errors.
 - MediaPipe is pinned to 0.10.21 on purpose: version 1.0.x crashes on macOS while
   initialising Metal, even with the CPU delegate. Don't "upgrade" the pin.
 
