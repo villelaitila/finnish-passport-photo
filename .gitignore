@@ -1,0 +1,12 @@
+# Never commit photos of people: inputs, outputs and check images stay local.
+*.jpg
+*.jpeg
+*.JPG
+*.JPEG
+*.png
+*.PNG
+*.heic
+*.HEIC
+*.task
+__pycache__/
+.DS_Store
