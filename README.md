@@ -60,6 +60,17 @@ use it as a Claude skill, Claude looks at the photo and the check images**, so t
 to Anthropic as part of the conversation, like any image you share with Claude. If you don't
 want that, run the script directly and look at the check images yourself.
 
+### Token usage
+
+The script on its own uses no tokens: it runs locally and never calls Claude.
+
+As a Claude skill, one photo typically takes **about 85,000–135,000 input tokens and
+2,000–3,000 output tokens**. Most of the input is Claude Code's own context (system prompt,
+tool definitions and this skill's instructions), resent on each step and mostly read from
+the prompt cache. The photos themselves are a small part, about 500–2,000 tokens each. The
+upper end was measured in a session with a large personal `CLAUDE.md`; a clean setup lands
+nearer the lower end. Processing several photos or asking follow-up questions adds to this.
+
 ## Installation
 
 ### 1. Install uv and git
