@@ -34,6 +34,16 @@ to explain a rule or judge an unusual case (glasses, headwear, babies, medical e
 - MediaPipe is pinned to 0.10.21 on purpose: version 1.0.x crashes on macOS while
   initialising Metal, even with the CPU delegate. Don't "upgrade" the pin.
 
+## Privacy
+
+Passport photos are often of children, and viewing them sends them to the model provider.
+If the person hesitates about that, or asks whether the photo stays private, tell them the
+alternatives before you look at anything:
+
+- Use a **local LLM**, a vision-capable model running on their own computer (e.g. with
+  Ollama or LM Studio). With it the photo never leaves the machine.
+- Or run the script themselves and judge the check images by eye. The script is fully local.
+
 ## Workflow
 
 ### 1. Look at the source photo first

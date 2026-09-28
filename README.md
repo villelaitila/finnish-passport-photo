@@ -58,7 +58,14 @@ everything runs on the CPU and one photo takes a few seconds.
 The script runs entirely on your computer and does not upload the photo anywhere. **When you
 use it as a Claude skill, Claude looks at the photo and the check images**, so they are sent
 to Anthropic as part of the conversation, like any image you share with Claude. If you don't
-want that, run the script directly and look at the check images yourself.
+want to send the photo to Anthropic or any similar LLM provider, you have two options:
+
+- **Use a local LLM.** Run a vision-capable model on your own computer, for example with
+  Ollama or LM Studio, in an agent tool that can read `SKILL.md` and run shell commands. The
+  photo then never leaves your machine. The script does not need an LLM at all; the model
+  only follows the workflow and does the visual review. Smaller local models see less
+  reliably, so look at the check images yourself too, especially for hair over the eyes.
+- **Run the script directly** and look at the check images yourself.
 
 ### Token usage
 
